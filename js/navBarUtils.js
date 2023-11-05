@@ -13,13 +13,7 @@ window.addEventListener('scroll', stickynavbar);
 $(window).resize(function () { 
 });
 
-/* if (screen.width > 954) {
-  console.log(screen.width);
-  // document.getElementById("top-navbar-mobile").style.display = "none";
-  // document.getElementById("top-navbar-desktop").style.display = "flex";
-} */
-
-
+// function to toggle between mobile version of nav bar and desktop version
 
 function reportWindowSize() {
   var widthOutput = window.innerWidth;
@@ -43,3 +37,14 @@ function toggleHamburgerMenu() {
       x.style.display = "block";
     }
   }
+
+
+// jQuery animate underline on navbars
+$(document).ready(function () {
+  $("a").hover(function () {
+      $(this).animate({
+          borderBottom: '2px solid #3399FF',
+          width : '46%'
+        }, 500);
+    });
+});

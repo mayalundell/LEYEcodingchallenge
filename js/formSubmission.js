@@ -46,12 +46,3 @@ $("#reservation-form").submit(function(e) {
 $("#contact-form").submit(function(e) {
     e.preventDefault();
 });
-
-$(document).ready(function () {
-    $("a").hover(function () {
-        $(this).animate({
-            borderBottom: '2px solid #3399FF',
-            width : '46%'
-        }, 500);
-    });
-});
