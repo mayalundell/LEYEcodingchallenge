@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aba Restaurant</title>
+    <link rel="icon" type="image/x-icon" href="/images/ico/favicon.ico">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="/css/reservation_form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="header">
+            <h1><img class="aba-logo" src="/images/png/Aba-Logo.png" alt="Aba restaurant logo"></h1>
+            <span id="topnav-hamburger" class="material-symbols-outlined" onclick="toggleHamburgerMenu()">menu</span>
+            <nav>
+                <ul id="top-navbar-mobile">
+                    <li id="reserve-nav"><a href="#reserve">Reserve</a></li>
+                    <li id="menu-nav"><a href="#menu">Menu</a></li>
+                    <li id="group-dining-nav"><a href="group-dining">Group Dining</a></li>
+                    <li id="events-nav"><a href="events">Events</a></li>
+                    <li id="team-nav"><a href="team">Team</a></li>
+                </ul>
+                <ul id="top-navbar-desktop">
+                    <li id="reserve-nav"><a href="#reserve">Reserve</a></li>
+                    <li id="menu-nav"><a href="#menu">Menu</a></li>
+                    <li id="group-dining-nav"><a href="group-dining">Group Dining</a></li>
+                    <li id="events-nav"><a href="events">Events</a></li>
+                    <li id="team-nav"><a href="team">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="main-imgs">
+            <img class="img-47" src="/images/webp/up-47.webp" alt="Food from Aba restaurant">
+            <img class="img-salad" src="/images/webp/Aba_VillageSalad.webp" alt="Village Salad from Aba restaurant">
+        </div>
+        <div id="reservation-container">
+            <h2>MAKE A RESERVATION</h2>
+            <form id="reservation-form" onsubmit="displayContactForm()">
+                <div class="form-input-wrapper"><input required type="date" class="reservation-field" id="reservation-date" name="reservation-date" aria-label="input reservation date" onchange="collectReservationFormInputs()"></div>
+                <div class="form-input-wrapper"><input required type="time" class="reservation-field" id="reservation-time" name="reservation-time" aria-label="input reservation time" onchange="collectReservationFormInputs()"></div>
+                <div class="form-input-wrapper"><select required class="reservation-field" id="reservation-people" name="reservation-people" aria-label="input reservation head count" onchange="collectReservationFormInputs()">
+                    <option value="1 person">1 Person</option>
+                    <option value="2 people" selected>2 People</option>
+                    <option value="3 people">3 People</option>
+                    <option value="4 people">4 People</option>
+                    <option value="5 people">5 People</option>
+                    <option value="6 people">6 People</option>
+                    <option value="7 people">7 People</option>
+                    <option value="8 people">8 People</option>
+                    <option value="9 people">9 People</option>
+                    <option value="10 people">10 People</option>
+                    <option value="11 people">11 People</option>
+                    <option value="12 people">12 People</option>
+                    <option value="13 people">13 People</option>
+                    <option value="14 people">14 People</option>
+                    <option value="15 people">15 People</option>
+                </select></div>
+                <div class="form-input-wrapper-button" ><button type="submit" class="reservation-field" id="find-a-table-button" aria-label="find a table">Find a Table</button></div>
+            </form>
+            <h2 id="available-table-message" onsubmit="displayContactForm()">We have a table available for you at this time. Please fill out your contact information below to confirm your reservation.</h2>
+            <form id="contact-form" onsubmit="displayConfirmationMessage()">
+                <div class="form-input-wrapper"><input required type="text" class="reservation-field" id="reservation-name" name="reservation-name" placeholder="Full Name" aria-label="input reservation contact name" onchange="collectReservationFormInputs()"></div>
+                <div class="form-input-wrapper"><input required type="tel" class="reservation-field" id="reservation-number" name="reservation-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Number" aria-label="input reservation contact number" onchange="collectReservationFormInputs()"></div>
+                <div class="form-input-wrapper"><input required type="email" class="reservation-field" id="reservation-email" name="reservation-email" placeholder="Email" aria-label="input reservation email" onchange="collectReservationFormInputs()"></div>
+                <div class="form-input-wrapper-button"><button type="submit" class="reservation-field" id="submit-reservation-button" aria-label="submit reservation confirmation">Confirm Reservation</button></div>
+            </form>
+            <span id="reservation-confirmation-message"></span>
+        </div>
+        <article class="article-container" id="group-dining-container">
+            <div class="article-text" id="group-dining-text">
+                <h2 class="article-header" id="group-dining-header">GROUP DINING AT ABA</h2>
+                <p class="article-description" id="group-dining-description">Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+                    fugiat nulla pariatur.
+                </p>
+                <button type="button" class="article-button" id="group-dining-button"> PLAN YOUR PARTY</button>
+            </div>
+            <img class="article-img" id="group-dining-img" src="/images/webp/up-35.webp" alt="plate of food from Aba restaurant">
+        </article>
+        <article class="article-container" id="wine-dinner-container">
+            <div class=img-wrapper><img class="article-img" id="wine-dinner-img" src="/images/webp/up-35.webp" alt="close-up of another plate of food from Aba restaurant"></div>
+            <div class="article-text" id="wine-dinner-text">
+                <h2 class="article-header" id="wine-dinner-header">WINE DINNER</h2>
+                <p class="article-description" id="wine-dinner-description">Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                </p>
+                <span class="article-insert" id="wine-dinner-date-insert">June 13th, 2018 at 7pm</span>
+                <button type="button" class="article-button" id="wine-dinner-button"> LEARN MORE</button>
+            </div>
+        </article>
+        <article class="article-container" id="about-aba-container">
+            <div class="article-text" id="about-aba-text">
+                <h2 class="article-header" id="about-aba-header">ABOUT ABA</h2>
+                <p class="article-description" id="about-aba-description"> Aba is a restaurant
+                    with a rooftop pation located in Chicago's historic Fulton Market District. This 
+                    is Chef CJ Jacobson's second restaurant with Lettuce Entertain You, and is an 
+                    extension of &#274ma (mother in Hebrew) in River North. Aba, meaning father in Hebrew,
+                    will incorporate &#274ma's style of cooking with a larger influence of steak, raw and
+                    chilled seafood. The beverage program is crafted by Wine Director Ryan Arnold and
+                    Mixologist Liz Pearce and showcases Mediterranean-inspired rare wines and spirits.
+                </p>
+            </div>
+            <img class="article-img" id="about-aba-img" src="/images/webp/up-42.webp" alt="plate of food from Aba restaurant"> 
+        </article>
+    </main>
+  </body>
+  <footer>
+    <div class="hours-locations-otherlinks-container">
+        <div class="hours-locations-wrapper">
+            <ul id="hours-otherlinks">
+                <li><h2>HOURS</h2></li>
+                <li>Tues - Thurs 12pm-10pm</li>
+                <li>Fri 12pm-1am</li>
+                <li>Sat 11am-1am</li>
+                <li>Sun 10am-9pm</li>
+            </ul>
+            <ul id="locations">
+                <li><h2>LOCATIONS</h2></li>
+                <li>302 N Green Street,<br>3rd Floor<br>Chicago, IL 60607<br><br><a id="location-number" href="tel:+7736451400">773-645-1400</a></li>
+            </ul>
+        </div>
+        <div class="other-links-container">
+            <h3>CONTACT</h3>
+            <h3>NEWSLETTER</h3>
+        </div>
+    </div>
+    <div class="footer-links">
+        <nav>
+            <ul id="footer-navbar">
+                <li id="frequent-diner-link"><a href="#frequent-diner">FREQUENT DINER</a></li>
+                <li id="gift-cards-link"><a href="#gift-cards">GIFT CARDS</a></li>
+                <li id="employment-link"><a href="#employment">EMPLOYMENT</a></li>
+                <li id="leye-com-link"><a href="#leye-com">LEYE.COM</a></li>
+                <li id="terms-of-use-link"><a href="#terms-of-use">TERMS OF USE</a></li>
+                <li id="privacy-policy-link"><a href="#privacy-policy">PRIVACY POLICY</a></li>
+            </ul>
+        </nav>
+    </div>
+  </footer>
+  <script src="/js/navBarUtils.js"></script>
+  <script src="/js/formSubmission.js"></script>
+</html>

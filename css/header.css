@@ -1,0 +1,142 @@
+/* header styling - includes logo and navigation bar */
+
+.header {
+    font-family: 'Playfair Display', serif; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-image: url("/images/jpg/white-wood.jpeg");
+    width: 100%;
+    z-index: 100;
+}
+
+.aba-logo {
+    width: 7vw;
+    height: auto;
+    margin-right: 2rem;
+    filter: drop-shadow(2px 2px 0 rgb(221, 192, 158) );
+}
+
+#top-navbar-desktop {
+    display: none;
+}
+
+#top-navbar-mobile {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    margin-top: 2rem;
+    text-align: end;
+    background-image: url("/images/jpg/white-wood.jpeg");
+    display: none;
+    width: 100%;
+}
+
+#top-navbar-mobile li {
+    list-style-type: none;
+}
+
+#top-navbar-mobile li a {
+    color: var(--main-text-color);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    display: block;
+  
+}
+
+#topnav-hamburger {
+    font-size: 6vw;
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.sticky, .header {
+    position: fixed;
+    top: 0;
+}
+
+
+
+@media screen and (min-width: 948px) {
+
+    #topnav-hamburger {
+        display: none;
+    }
+
+    #top-navbar-mobile {
+        display: none;
+    }
+
+    .header {
+        padding-right: 10vw;
+    }
+
+    .aba-logo {
+        width: 5rem;
+        height: auto;
+        margin-right: 2rem;
+    }
+  
+    #top-navbar-desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: static;
+        border-top: .5px solid var(--main-text-color);
+        border-bottom: .5px solid var(--main-text-color);
+    }
+    
+    #top-navbar-desktop li {
+        text-transform: uppercase;
+        list-style-type: none;  
+    }
+    
+    #top-navbar-desktop li a {
+      display: block;
+      color: var(--main-text-color);
+      text-align: center;
+      text-decoration: none;
+      margin: 0.5rem 5vw;
+    }
+    
+
+    #top-navbar-desktop ul {
+        display: inline-block;
+        position: relative;
+        color: #626262;
+    }
+    
+    #top-navbar-desktop a {
+        position: relative;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    #top-navbar-desktop a::before {
+        content: '';
+        position: absolute;
+        margin-left: 0%;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0rem;
+        left: 0;
+        background-color: #626262;
+        transform-origin: bottom left;
+        transition: transform 0.3s ease-out;
+    }
+    
+    #top-navbar-desktop a:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .sticky, .header {
+        position: fixed;
+        top: 0;
+    }
+}
+

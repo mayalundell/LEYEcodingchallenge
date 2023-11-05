@@ -1,0 +1,39 @@
+/* global style variables */
+:root {
+    --main-text-color: #484540;
+    --footer-content-color: #fff;
+    --button-color: #012a44;
+}
+
+/* styling for overall elements */
+
+* {
+    box-sizing: border-box;
+    color: var(--main-text-color);
+}
+
+p, span, footer {
+    font-family: 'Montserrat', serif; 
+}
+
+h2, h3, button {
+
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background-image: url("/images/jpg/white-wood.jpeg");
+    background-repeat: repeat-y;
+}
+
+button {
+    background:var(--button-color);
+    color: white;
+    padding: .5rem 3rem;
+    border-width: 0;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+}
